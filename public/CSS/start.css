@@ -1,0 +1,75 @@
+
+:root {
+    --gutter-num: #7A7A7A;
+    --gutter-num-high: #dbdbdb; 
+    --bg-color: #1E1E1E;
+    --bulma-danger-h: 9deg;
+    --bulma-danger-s: 88%;
+    --bulma-danger-l: 55%;
+}
+.code-background {
+    background-color: var(--bg-color);
+    padding: 10px;
+    border-radius: 5px;
+    overflow: auto;   /* Add scrollbars when necessary */
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.25); /* Optional: Add shadow */
+}
+#gen-button {
+    --bulma-loading-color: var(--bulma-white);
+}
+
+#editor {
+    /* scroll wheel style */
+    background-color: var(--bg-color);
+    margin: 10px;
+    width: calc(100% - 20px) !important;
+    height: auto;     /* Allow dynamic height based on content */
+    min-height: 40vh; /* Set a minimum height */
+    width: 100%;
+    padding: 20px;
+    max-height: 70vh;  /* Prevent excessive height */
+
+
+}
+.dropdown-item:hover {
+    background-color: #000dff14 ;
+    color: var(--bulma-link-dark) !important;
+}
+.dropdown-item {
+    border-radius: 7px;
+}
+.dropdown-item.is-active {
+    background-color: #000dff30 ;
+    color: var(--bulma-link-dark) !important;
+}
+
+.is-outlined {
+    --bulma-button-border-width: max(2px,0.125em) !important;
+    --bulma-button-outer-shadow-alpha: 1;
+}
+.is-outlined:hover {
+    color: var(--bulma-link-dark) !important;
+    
+}
+
+#editor .ace_gutter {
+    background-color: var(--bg-color);
+    width: 50px;         /* Optional: Adjust width */
+
+}
+
+#editor .ace_content {
+    margin-left: 30px;
+    background-color: var(--bg-color);
+}
+.ace_scrollbar::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--bg-color);
+}
+.ace_scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--gutter-num);
+    border-radius: 10px;
+}
+
+
+

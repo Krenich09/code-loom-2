@@ -1,0 +1,17 @@
+{
+  "name": "codeloom",
+  "version": "1.0.0",
+  "description": "Generate Code-Comments using AI",
+  "main": "./public/index.html",
+  "scripts": {
+    "start": "node ./src/server.js"
+  },
+  "author": "Kren1ch",
+  "license": "ISC",
+  "dependencies": {
+    "ace-builds": "^1.36.2",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  }
+}

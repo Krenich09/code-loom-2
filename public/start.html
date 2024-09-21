@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/9abe29d3f9.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
+    <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/start.css">
+    <title>Codeloom AI</title>
+</head>
+
+<body class="has-navbar-fixed-top">
+    <nav class="navbar quick-navbar is-fixed-top" role="navigation" aria-label="main navigation" id="navbar">
+        <div class="container">
+
+            <div class="navbar-brand">
+                <a class="navbar-item" href="./">
+                    <img src="https://i.postimg.cc/HkSgHb6t/mainLogo.png" alt="Logo" height="40">
+                </a>
+
+                <a role="button" class="navbar-burger has-text-black" data-target="navMenu" aria-label="menu"
+                    aria-expanded="false">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="https://www.instagram.com/krenichstudios/" target="_blank">
+                        <i class="icon icon-instagram"></i>
+                    </a>
+                    <a class="navbar-item" href="https://discord.gg/uRmC8mYDYt" target="_blank">
+                        <i class="icon icon-discord"></i>
+                    </a>
+                    <a class="navbar-item" href="https://x.com/KrenichRaid" target="_blank">
+                        <i class="icon icon-twitter"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <section class="hero background is-fullheight p-0 " style="min-height:  100vh !important">
+        <div class="hero-body pl-2 pr-2" style="justify-content: space-around;">
+            <div class="columns p-0 is-flex-direction-column" style="min-width: 100%;">
+                <div class="column mb-3 p-0">
+                    <div class="container has-text-right">
+                        <p class="buttons is-pulled-right">
+                            <button class="button is-danger is-medium is-rounded" id="gen-button">
+                                <div class="" id="gen-button-content">
+                                    <span class="icon has-text-white is-size-6 ">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                    </span>
+                                    <span class="has-text-white">Generate</span>
+                                </div>
+                            </button>
+
+                            <div class="dropdown  pr-3 " id="selection_drop">
+                                <div class="dropdown-trigger mb-1">
+                                    <button class="button is-outlined is-link is-rounded is-medium" aria-haspopup="true"
+                                        aria-controls="dropdown-menu3">
+                                        <span>Strength</span>
+                                        <span class="icon has-text-link is-size-6">
+                                            <i class="fa-solid fa-caret-down"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="dropdown-menu" id="dropdown-menu3" role="menu"style="max-width: 157px;">
+                                    <div class="dropdown-content is-link has-text-left pl-2 pr-2" style="max-width: 157px;">
+                                        <a href="#" class="dropdown-item is-link has-text-link" id="drop1"> Low </a>
+                                        <hr class="dropdown-divider pt-0 pb-0 mt-1 mb-1 has-background-link-light">
+                                        <a href="#" class="dropdown-item is-link has-text-link is-active" id="drop2"> Medium </a>
+                                        <hr class="dropdown-divider pt-0 pb-0 mt-1 mb-1 has-background-link-light">
+                                        <a href="#" class="dropdown-item is-link has-text-link" id="drop3"> Extensive </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+                <div class="column p-0">
+                    <div class="container  has-text-centered code-background"
+                        style="min-height:  30vh !important; border-radius: 25px;">
+                        <div id="editor">// Paste your code here</div>
+                    </div>
+                </div>
+                <div class="column mt-3 p-0"></div>
+                <div class="container has-text-right">
+                    <p class="buttons is-pulled-right">
+                        <button class="button is-link is-rounded is-medium" id="saveBtn">
+                            <span class="icon has-text-white is-size-6">
+                                <i class="fas fa-download"></i>
+                            </span>
+                            <span>Save</span>
+                        </button>
+                        <button class="button is-link is-rounded is-medium" id="copyBtn">
+                            <span class="icon has-text-white is-size-6">
+                                <i class="far fa-copy"></i>
+                            </span>
+                            <span>Copy</span>
+                        </button>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script src="./ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./JS/start.js"></script>
+</body>
+
+</html>
