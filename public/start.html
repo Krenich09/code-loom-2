@@ -4,13 +4,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codeloom AI - Start</title>
+    <meta name="description"
+        content="Codeloom AI is a code-comment generator that helps developers save time on creating documentation for any programming language.">
+
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://code-loom.com" />
+
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#2133BA" />
+
+    <meta name="keywords"
+        content="Codeloom AI, Code-Comment Generator, Code Comment, Code Documentation, Code Comments, Code Loom AI, Code Loom, Artificial Intelligence, Code Comment Generator" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Kren1ch" />
+
+    <!-- Open Graph / Facebook / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Codeloom AI" />
+    <meta property="og:title" content="CodeLoom AI - Code-Comment Generator." />
+    <meta property="og:description"
+        content="Codeloom AI is a code-comment generator that helps developers save time on creating documentation for any programming language." />
+    <meta property="og:image" content="https://code-loom.com/assets/images/promotional/og-image.png" />
+    <meta property="og:url" content="https://code-loom.com" />
+
+    <meta name="twitter:title" content="CodeLoom AI - Code-Comment Generator." />
+    <meta name="twitter:description"
+        content="Codeloom AI is a code-comment generator that helps developers save time on creating documentation for any programming language." />
+    <meta name="twitter:site" content="@KrenichRaid" />
+    <meta name="twitter:creator" content="@KrenichRaid" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://code-loom.com/assets/images/promotional/og-image.png" />
+
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <script src="https://kit.fontawesome.com/9abe29d3f9.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://livejs.com/live.js"></script>
-    <link rel="stylesheet" href="../CSS/index.css">
-    <link rel="stylesheet" href="../CSS/start.css">
-    <title>Codeloom AI</title>
-    <link rel="icon" href="../assets/images/icons/favicons/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/index.css">
+    <link rel="stylesheet" href="./CSS/start.css">
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -19,7 +51,7 @@
 
             <div class="navbar-brand">
                 <a class="navbar-item" href="./">
-                    <img src="https://i.postimg.cc/HkSgHb6t/mainLogo.png" alt="Logo" height="40">
+                    <img src="../assets/images/icons/navLogo.svg" alt="Logo" height="300px">
                 </a>
 
                 <a role="button" class="navbar-burger has-text-black" data-target="navMenu" aria-label="menu"
@@ -64,26 +96,27 @@
                                 </div>
                             </button>
 
-                            <div class="dropdown  pr-3 " id="selection_drop">
-                                <div class="dropdown-trigger mb-1">
-                                    <button class="button is-outlined is-link is-rounded is-medium" aria-haspopup="true"
-                                        aria-controls="dropdown-menu3">
-                                        <span>Strength</span>
-                                        <span class="icon has-text-link is-size-6">
-                                            <i class="fa-solid fa-caret-down"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                                <div class="dropdown-menu" id="dropdown-menu3" role="menu"style="max-width: 157px;">
-                                    <div class="dropdown-content is-link has-text-left pl-2 pr-2" style="max-width: 157px;">
-                                        <a href="#" class="dropdown-item is-link has-text-link" id="drop1"> Low </a>
-                                        <hr class="dropdown-divider pt-0 pb-0 mt-1 mb-1 has-background-link-light">
-                                        <a href="#" class="dropdown-item is-link has-text-link is-active" id="drop2"> Medium </a>
-                                        <hr class="dropdown-divider pt-0 pb-0 mt-1 mb-1 has-background-link-light">
-                                        <a href="#" class="dropdown-item is-link has-text-link" id="drop3"> Extensive </a>
-                                    </div>
+                        <div class="dropdown  pr-3 " id="selection_drop">
+                            <div class="dropdown-trigger mb-1">
+                                <button class="button is-outlined is-link is-rounded is-medium" aria-haspopup="true"
+                                    aria-controls="dropdown-menu3">
+                                    <span>Strength</span>
+                                    <span class="icon has-text-link is-size-6">
+                                        <i class="fa-solid fa-caret-down"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <div class="dropdown-menu" id="dropdown-menu3" role="menu" style="max-width: 157px;">
+                                <div class="dropdown-content is-link has-text-left pl-2 pr-2" style="max-width: 157px;">
+                                    <a href="#" class="dropdown-item is-link has-text-link" id="drop1"> Low </a>
+                                    <hr class="dropdown-divider pt-0 pb-0 mt-1 mb-1 has-background-link-light">
+                                    <a href="#" class="dropdown-item is-link has-text-link is-active" id="drop2"> Medium
+                                    </a>
+                                    <hr class="dropdown-divider pt-0 pb-0 mt-1 mb-1 has-background-link-light">
+                                    <a href="#" class="dropdown-item is-link has-text-link" id="drop3"> Extensive </a>
                                 </div>
                             </div>
+                        </div>
                         </p>
                     </div>
                 </div>
