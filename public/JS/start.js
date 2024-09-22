@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const genButton = document.getElementById('gen-button');
     const genButtonContent = document.getElementById('gen-button-content');
     var hasClicked = false;
@@ -9,6 +9,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyBtn = document.getElementById('copyBtn');
     const saveBtn = document.getElementById('saveBtn');
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+
+    async function getProdStatus() {
+        try {
+            const response = await fetch('/production', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ check: "dev" })
+            });
+            const result = await response.json();
+            return result.prod;
+        } catch (error) {
+            console.error('Error getting production status:', error);
+            return false;
+        }
+    }
+    let isProduction = await getProdStatus();
     // Add a click event on each of them
     $navbarBurgers.forEach(el => {
         el.addEventListener('click', () => {
@@ -58,16 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
         highlightActiveLine: false,
         highlightGutterLine: false,
         highlightSelectedWord: false,
-
+        // Scroll more than the screen width
+        scrollPastEnd: 0.2,
         selectionStyle: "line",
 
-        wrap: true,
-        wrapBehavioursEnabled: true,
     });
     editor.session.setUseWorker(false);
     var dropSelection = 2;
     genButton.addEventListener('click',async () => {
         if (hasClicked) return;
+        if(isProduction === "false") return;
         genButton.classList.add('is-loading');
         genButtonContent.classList.add('is-invisible');
         hasClicked = true;
@@ -92,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         genButton.classList.remove('is-loading');
         genButtonContent.classList.remove('is-invisible');
+        hasClicked = false;
     });
     selection_drop.addEventListener('click', () => {
         selection_drop.classList.toggle('is-active');

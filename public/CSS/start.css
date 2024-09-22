@@ -59,12 +59,30 @@
 }
 
 #editor .ace_content {
-    margin-left: 30px;
     background-color: var(--bg-color);
 }
 .ace_scrollbar::-webkit-scrollbar {
     width: 10px;
     background-color: var(--bg-color);
+    background-color: transparent;
+}
+.ace_scrollbar-h::-webkit-scrollbar {
+    height: 10px;
+    background-color: var(--bg-color);
+    background-color: transparent;
+}
+.ace_scroller.ace_scroll-left:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.1) inset;
+    pointer-events: none;
+}
+.ace_mobile-menu {
+    display: none;
 }
 .ace_scrollbar::-webkit-scrollbar-thumb {
     background-color: var(--gutter-num);

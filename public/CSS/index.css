@@ -17,11 +17,31 @@
     padding-top: 10%;
     text-align: center;
     box-shadow: none;
+    z-index: 1000;
 }
+
 .is-on-mobile .navbar-item
 {
-    border-top: var(--light-gray) 1px solid;
+    background-color: transparent;
+    /* center */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+.is-on-mobile .p1
+{
+    border-top: #1111113b 2px solid;
+}
+.is-on-mobile .p2
+{
+    border-top: #1111113b 2px solid;
+    border-bottom: #1111113b 2px solid;
+}
+.is-on-mobile .p3
+{
+    border-bottom: #1111113b 2px solid;
+}
+
 
 .add-shadow {
     box-shadow: rgba(60, 64, 67, 0.1) 0px 20px 20px 0px;
@@ -48,8 +68,10 @@ a.navbar-item:hover {
     color: var(--light-gray);
 }
 .navbar {
+    position: absolute;
     background-color: rgba(255, 255, 255, 0.3); /* Adjust opacity here */
     backdrop-filter: blur(10px);
+    z-index: 5;
 }
 /* Ensure hero content fills the screen and the navbar overlays it */
 .hero {
@@ -58,8 +80,12 @@ a.navbar-item:hover {
 .quick-navbar {
     padding: 10px;
 }
-
+.navbar-menu.is-active.navbar-item
+{
+    color: var(--light-gray);
+}
 .quick-navbar .navbar-item {
+    background-color: transparent;
     color: #1b1b1b;
     font-size: 17px;
 }
@@ -107,8 +133,9 @@ a.no-underline {
 }
 
 .navbar-menu.is-active {
-    position: absolute;
+    z-index: 999;
     width: 100%;
+    position: relative;
 }
 
 .dark-text
@@ -151,3 +178,27 @@ a.no-underline {
     background: radial-gradient(at right center, #FFCCD7, #FBD2DE);
 }
 
+hr {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.test .columns {
+    display: flex;
+    justify-content: center; /* Horizontally centers columns */
+    align-items: center;     /* Vertically centers columns */
+    height: 100%;            /* Ensure the columns take full height */
+}
+
+.test .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Centers content within the column */
+    justify-content: center;  /* Centers content vertically */
+}
+
+.navbar-menu 
+{
+
+    background: transparent;
+}

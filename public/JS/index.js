@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     let isShadow = false;
     let isFirstTime = false;
     let userID = "";
@@ -33,7 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
     else {
         userID = localStorage.getItem('userID');
     }
-    
+
+    async function getProdStatus() {
+        try {
+            const response = await fetch('/production', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ check: "dev" })
+            });
+            const result = await response.json();
+            return result.prod;
+        } catch (error) {
+            console.error('Error getting production status:', error);
+            return false;
+        }
+    }
+    let production = await getProdStatus();
+    console.log("Production: " + production);
+
 
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     // Add a click event on each of them
@@ -74,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Send to Discord User ID
     const hookURL = "https://discord.com/api/webhooks/1287081791038951454/ZwkGRvACwEH374tQCzmv4FTVRKycsWiMHvkf5d-_m9X6t8NIeT0FMf5jfcV8rvKlAE53";
-    const sendToDiscord =  (message) => {
+    const sendToDiscord = (message) => {
         try {
             fetch(hookURL, {
                 method: 'POST',
@@ -98,19 +117,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const ref = getQueryParam('ref');
     if (ref) {
         let message = `User ID: ${userID} has visited the website. 🚀 First Time: ${isFirstTime}. Referred by: ${ref}.`;
-        try
-        {
-            // sendToDiscord(message);
+        try {
+            if (production === "true") 
+            {
+                sendToDiscord(message);
+            }
         } catch (error) {
             console.error(error);
         }
     }
-    else
-    {
+    else {
         let message = `User ID: ${userID} has visited the website. 🚀 First Time: ${isFirstTime}.`;
-        try
-        {
-            // sendToDiscord(message);
+        try {
+            if (production === "true")
+            {
+                sendToDiscord(message);
+            }
         } catch (error) {
             console.error(error);
         }
